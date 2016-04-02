@@ -1,3 +1,8 @@
+1.03     2016-03-25
+
+- Rebuilt all locale data with CLDR 29, released on 2016-03-19.
+
+
 1.02     2015-12-09
 
 - Make the DateTime::Locale->load method accept a locale in any non-canonical
@@ -65,7 +70,7 @@
   still included in the distribution in case someone has a custom locale that
   inherits from this module. However, this module will go away in a future
   release.
-z
+
 - The "ii-*" aliases for the "he-*" locales have been removed.
 
 - The "no-*" aliases for the "nn-*" locales have been removed.
