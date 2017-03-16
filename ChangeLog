@@ -1,3 +1,54 @@
+1.14     2017-03-05
+
+- Codes with just a language and script code were not parsed correctly,
+  leading to bugs in their data, so that they did not report a script_code,
+  nor did their name reflect the script. So for example "bs-Latn" was just
+  "Bosnian" instead of "Bosnian Latin".
+
+
+1.13     2017-03-05
+
+- Fixed a regression bug where providing a locale's English name or native
+  name to DateTime::Locale->load no longer worked. Fixed by Sergey. GH #13.
+
+
+1.12     2017-01-29
+
+- Rebuilt all locale data with CLDR 30.0.3, released on 2016-12-02.
+
+
+1.11     2016-11-12
+
+- Switched from RT to the GitHub issue tracker.
+
+
+1.10     2016-10-22
+
+- Don't let warnings from other modules cause t/09version-check.t to
+  fail. Reported by Graham Ollis. RT #118465
+
+
+1.09     2016-10-10
+
+- Rebuilt all locale data with CLDR 30, released on 2016-10-05.
+
+
+1.08     2016-09-23
+
+- Require namespace::autoclean 0.19+.
+
+
+1.07     2016-09-17
+
+- Bump minimum required Perl to 5.8.4 from 5.8.1. This matches DateTime.pm
+  itself.
+
+
+1.06     2016-09-16
+
+- Replaced Params::Validate with Params::ValidationCompiler.
+
+
 1.05     2016-06-26
 
 - Instead of using the DATA handle to get at as-yet-unloaded locale data in
