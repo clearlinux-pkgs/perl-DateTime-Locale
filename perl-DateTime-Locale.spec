@@ -4,7 +4,7 @@
 #
 Name     : perl-DateTime-Locale
 Version  : 1.14
-Release  : 12
+Release  : 13
 URL      : http://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/DateTime-Locale-1.14.tar.gz
 Source0  : http://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/DateTime-Locale-1.14.tar.gz
 Summary  : 'Localization support for DateTime.pm'
