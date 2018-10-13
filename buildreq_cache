@@ -1,0 +1,12 @@
+1.22
+perl(CPAN::Meta::Check)
+perl(Dist::CheckConflicts)
+perl(File::ShareDir)
+perl(Params::ValidationCompiler)
+perl(Specio::Declare)
+perl(Specio::Library::String)
+perl(Test::Fatal)
+perl(Test::File::ShareDir::Dist)
+perl(Test::Requires)
+perl(Test::Warnings)
+perl(namespace::autoclean)
