@@ -1,4 +1,4 @@
-1.23
+1.24
 perl(CPAN::Meta::Check)
 perl(Dist::CheckConflicts)
 perl(File::ShareDir)
