@@ -4,10 +4,10 @@
 #
 Name     : perl-DateTime-Locale
 Version  : 1.24
-Release  : 31
+Release  : 32
 URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-1.24.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-1.24.tar.gz
-Summary  : 'Localization support for DateTime.pm'
+Summary  : Localization support for DateTime.pm
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0 ICU
 Requires: perl-DateTime-Locale-license = %{version}-%{release}
@@ -54,6 +54,7 @@ version 1.24
 Summary: dev components for the perl-DateTime-Locale package.
 Group: Development
 Provides: perl-DateTime-Locale-devel = %{version}-%{release}
+Requires: perl-DateTime-Locale = %{version}-%{release}
 
 %description dev
 dev components for the perl-DateTime-Locale package.
