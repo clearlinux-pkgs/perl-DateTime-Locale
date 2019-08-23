@@ -4,13 +4,16 @@
 #
 Name     : perl-DateTime-Locale
 Version  : 1.24
-Release  : 32
+Release  : 33
 URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-1.24.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-1.24.tar.gz
-Summary  : Localization support for DateTime.pm
+Summary  : 'Localization support for DateTime.pm'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0 ICU
 Requires: perl-DateTime-Locale-license = %{version}-%{release}
+Requires: perl(B::Hooks::EndOfScope)
+Requires: perl(File::ShareDir)
+Requires: perl(Module::Implementation)
 BuildRequires : buildreq-cpan
 BuildRequires : perl(B::Hooks::EndOfScope)
 BuildRequires : perl(CPAN::Meta::Check)
@@ -75,7 +78,7 @@ license components for the perl-DateTime-Locale package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -85,7 +88,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
