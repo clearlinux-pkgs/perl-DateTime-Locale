@@ -1,11 +1,13 @@
-1.26
+1.27
 perl(CPAN::Meta::Check)
 perl(File::ShareDir)
+perl(Importer)
 perl(Params::ValidationCompiler)
 perl(Specio::Declare)
 perl(Specio::Library::String)
-perl(Test::Fatal)
+perl(Sub::Info)
+perl(Test2::Plugin::NoWarnings)
+perl(Test2::Require::Module)
+perl(Test2::V0)
 perl(Test::File::ShareDir::Dist)
-perl(Test::Requires)
-perl(Test::Warnings)
 perl(namespace::autoclean)
