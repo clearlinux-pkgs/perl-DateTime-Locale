@@ -1,5 +1,6 @@
 1.32
 perl(CPAN::Meta::Check)
+perl(Dist::CheckConflicts)
 perl(File::ShareDir)
 perl(Importer)
 perl(Params::ValidationCompiler)

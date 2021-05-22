@@ -4,12 +4,12 @@
 #
 Name     : perl-DateTime-Locale
 Version  : 1.32
-Release  : 45
+Release  : 46
 URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-1.32.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-1.32.tar.gz
 Summary  : 'Localization support for DateTime.pm'
 Group    : Development/Tools
-License  : Artistic-1.0-Perl ICU
+License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0 ICU
 Requires: perl-DateTime-Locale-license = %{version}-%{release}
 Requires: perl-DateTime-Locale-perl = %{version}-%{release}
 Requires: perl(B::Hooks::EndOfScope)
@@ -22,6 +22,7 @@ BuildRequires : perl(Class::Data::Inheritable)
 BuildRequires : perl(Class::Inspector)
 BuildRequires : perl(Class::Tiny)
 BuildRequires : perl(Devel::StackTrace)
+BuildRequires : perl(Dist::CheckConflicts)
 BuildRequires : perl(Eval::Closure)
 BuildRequires : perl(Exception::Class)
 BuildRequires : perl(File::Copy::Recursive)
@@ -109,6 +110,7 @@ make TEST_VERBOSE=1 test || :
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-DateTime-Locale
+cp %{_builddir}/DateTime-Locale-1.32/LICENSE %{buildroot}/usr/share/package-licenses/perl-DateTime-Locale/4a359dc0a277cb78714a49202acc4fb1935d7186
 cp %{_builddir}/DateTime-Locale-1.32/LICENSE.cldr %{buildroot}/usr/share/package-licenses/perl-DateTime-Locale/96f969d89e371129342f90e4c815e4abdb7461c4
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
@@ -923,6 +925,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files license
 %defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-DateTime-Locale/4a359dc0a277cb78714a49202acc4fb1935d7186
 /usr/share/package-licenses/perl-DateTime-Locale/96f969d89e371129342f90e4c815e4abdb7461c4
 
 %files perl
