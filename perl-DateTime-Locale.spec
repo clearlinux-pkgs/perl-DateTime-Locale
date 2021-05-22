@@ -4,7 +4,7 @@
 #
 Name     : perl-DateTime-Locale
 Version  : 1.32
-Release  : 47
+Release  : 48
 URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-1.32.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-1.32.tar.gz
 Summary  : 'Localization support for DateTime.pm'
