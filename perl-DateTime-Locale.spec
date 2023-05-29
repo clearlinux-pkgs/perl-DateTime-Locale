@@ -4,10 +4,10 @@
 # Using build pattern: cpan
 #
 Name     : perl-DateTime-Locale
-Version  : 1.38
-Release  : 58
-URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-1.38.tar.gz
-Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-1.38.tar.gz
+Version  : 1.39
+Release  : 59
+URL      : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-1.39.tar.gz
+Source0  : https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/DateTime-Locale-1.39.tar.gz
 Summary  : 'Localization support for DateTime.pm'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl ICU
@@ -40,7 +40,6 @@ BuildRequires : perl(Specio::Declare)
 BuildRequires : perl(Specio::Library::String)
 BuildRequires : perl(Sub::Exporter::Progressive)
 BuildRequires : perl(Sub::Identify)
-BuildRequires : perl(Sub::Info)
 BuildRequires : perl(Test2::Plugin::NoWarnings)
 BuildRequires : perl(Test2::Require::Module)
 BuildRequires : perl(Test2::V0)
@@ -57,7 +56,7 @@ BuildRequires : perl(namespace::clean)
 # NAME
 DateTime::Locale - Localization support for DateTime.pm
 # VERSION
-version 1.38
+version 1.39
 
 %package dev
 Summary: dev components for the perl-DateTime-Locale package.
@@ -87,8 +86,11 @@ perl components for the perl-DateTime-Locale package.
 
 
 %prep
-%setup -q -n DateTime-Locale-1.38
-cd %{_builddir}/DateTime-Locale-1.38
+%setup -q -n DateTime-Locale-1.39
+cd %{_builddir}/DateTime-Locale-1.39
+pushd ..
+cp -a DateTime-Locale-1.39 buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -96,7 +98,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
 if test -f Makefile.PL; then
-%{__perl} Makefile.PL
+%{__perl} -I. Makefile.PL
 make  %{?_smp_mflags}
 else
 %{__perl} Build.PL
@@ -123,6 +125,7 @@ find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
 find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %{_fixperms} %{buildroot}/*
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -132,6 +135,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/DateTime::Locale.3
 /usr/share/man/man3/DateTime::Locale::Base.3
 /usr/share/man/man3/DateTime::Locale::Catalog.3
+/usr/share/man/man3/DateTime::Locale::Conflicts.3
 /usr/share/man/man3/DateTime::Locale::Data.3
 /usr/share/man/man3/DateTime::Locale::FromData.3
 /usr/share/man/man3/DateTime::Locale::Util.3
