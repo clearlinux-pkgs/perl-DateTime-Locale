@@ -1,7 +1,6 @@
-1.39
+1.40
 perl(CPAN::Meta::Check)
 perl(File::ShareDir)
-perl(Importer)
 perl(Params::ValidationCompiler)
 perl(Specio::Declare)
 perl(Specio::Library::String)
