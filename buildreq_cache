@@ -1,4 +1,4 @@
-1.41
+1.42
 perl(CPAN::Meta::Check)
 perl(File::ShareDir)
 perl(Params::ValidationCompiler)
